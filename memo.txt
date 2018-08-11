@@ -1,0 +1,22 @@
+aliyun>>
+remote:585692
+root:BinY@585@aliyun
+yubf:alybf1988
+git>>
+yubf:Alybf1988
+https://github.com/yubf/memo.git
+
+adduser username
+>password
+chmod u+w /etc/sudoers
+username ALL=(ALL:ALL) ALL
+
+sudo apt install build-essential checkinstall
+sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+cd /usr/src
+sudo wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tgz
+sudo tar xzf Python-3.6.6.tgz
+cd Python-3.6.6
+sudo ./configure
+sudo make altinstall
+python3.6 -V
