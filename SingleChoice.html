@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<mata charset="UTF-8">
+<title>SingleChoice</title>
+<style type="text/css">
+span {
+	display: block;
+}
+</style>
+</head>
+<body>
+<h2>选择题</h2>
+<div id="sc1">
+<span>1.世界上最长的河是什么河？</span>
+<span><input type="radio" name="1" value="a" onclick="judge(this.name, this.value)">A.长江</span>
+<span><input type="radio" name="1" value="b" onclick="judge(this.name, this.value)">B.黄河</span>
+<span><input type="radio" name="1" value="c" onclick="judge(this.name, this.value)">C.尼罗河</span>
+<span><input type="radio" name="1" value="d" onclick="judge(this.name, this.value)">D.亚马逊河</span>
+</div>
+<div id="sc2">
+<span>2.世界上最高的山是什么山？</span>
+<span><input type="radio" name="2" value="a" onclick="judge(this.name, this.value)">A.喜马拉雅山</span>
+<span><input type="radio" name="2" value="b" onclick="judge(this.name, this.value)">B.黄山</span>
+<span><input type="radio" name="2" value="c" onclick="judge(this.name, this.value)">C.泰山</span>
+<span><input type="radio" name="2" value="d" onclick="judge(this.name, this.value)">D.天山</span>
+</div>
+<script type="text/javascript">
+function judge(name, value){
+	var answer_list = ["c","a"];
+	var index = parseInt(name)-1;
+	var answer = answer_list[index];
+	var li = document.getElementsByName(name);
+	if(answer === value){
+		for (var i=0;i<li.length; i++){
+			if (li[i].value === value){
+				console.log(li[i]);
+				var par = li[i].parentNode;
+				par.style.color = "red";
+			}
+		}
+	}else{
+		for (var i=0;i<li.length; i++){
+			var par = li[i].parentNode;
+			par.style.color = "black";
+		}
+	}
+}
+</script>
+</body>
+</html>

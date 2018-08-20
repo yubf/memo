@@ -1,0 +1,89 @@
+<DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>loan calculator</title>
+<style type="text/css">
+#div1, #div2{
+	background-color: #ddd;
+	float: left;
+
+}
+#loan, #repayment{
+	font-size: 20px;
+}
+input {
+	height: 22px;
+	width: 150px;
+	text-align: right;
+}
+td {
+	border:black solid 1px;
+}
+button {
+	margin: 1px 5px; 
+	border:black solid 1px; 
+	border-radius: 3px；
+	background-color:#a00;
+}
+</style>
+</head>
+<body>
+<div id="div1">
+	<table id="loan">
+		<tr>
+			<th colspan=3>贷款信息</th>
+		</tr>
+		<tr>
+			<td>贷款总额</td>
+			<td><input name="total loan" value="0" onfocus="if(value==='0'){value='';}" onchange="checkValue(this);" onblur="checkValue(this);"></input></td>
+			<td>万元</td>	
+		</tr>
+		<tr>
+			<td>贷款期限</td>
+			<td><input name="total loan" value="0" onfocus="if(value==='0'){value='';}" onchange="checkValue(this);" onblur="checkValue(this);"></input></td>
+			<td>年</td>
+		</tr>
+		<tr>
+			<td>年利率</td>
+			<td><input name="total loan" value="0" onfocus="if(value==='0'){value='';}" onchange="checkValue(this);" onblur="checkValue(this);"></input></td>
+			<td>%</td>
+		</tr>
+		<tr><td colspan=3 id="err_msg">&nbsp;</td></tr>
+	</table>
+</div>
+<div id="div2">
+		<table id="repayment">
+		<tr>
+			<th colspan=3>还款信息</th>
+		</tr>
+		<tr>
+			<td>还款总额</td>
+			<td><input type="" name="total repayment" readonly="readonly" value="0"></input></td>
+			<td>万元</td>
+		</tr>
+		<tr>
+			<td>利息总额</td>
+			<td><input type="" name="total interest" readonly="readonly" value="0"></input></td>
+			<td>万元</td>
+		</tr>
+		<tr>			
+			<td>每月还款</td>
+			<td><input type="" name="monthly interest" readonly="readonly" value="0"></input></td>
+			<td>元</td>
+		</tr>
+		<tr><td colspan=3><button>清空</button></td></tr>
+	</table>
+
+</div>
+<script type="text/javascript">
+function checkValue(ele){
+	var rgx = /^\d+\.?\d+$/ 
+	if(!rgx.test(ele.value)){
+		ele.value="0";
+		console.log("$"+ele.value+"$");
+	}
+}
+</script>
+</body>
+</html>

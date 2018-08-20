@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+<style type="text/css">
+span {
+	display: block;
+	margin: 5px 10px;
+}
+div {
+	display: none;
+}
+</style>
+</head>
+<body>
+<form>
+<span>姓名：<input name="name" id="name"></input></span>
+<span>性别：<input type="radio" name="sex" id="sex_m">男&nbsp;</input>
+	<input type="radio" name="sex" id="sex_w">女</input></span>
+<span>年龄：<input name="age" id="age"></input></span>
+<span>收入：<input name="income" id="income"></input></span>
+<input type="button" value="提交" onclick="out();"></input>
+<input type="reset" value="重置"></input>
+<hr>
+<div id="man">
+<span>吃饭：<input name="eat" id="eat"></input></span>
+<span>旅游：<input name="travel" id="travel"></input></span>
+</div>
+<div id="woman">
+<span>化妆：<input name="makeup" id="makeup"></input></span>
+<span>购物：<input name="shopping" id="shopping"></input></span>
+</div>
+</form>
+<script type="text/javascript">
+function cal(sex, income){
+	if(sex==="man"){
+		var eat = income*0.15;
+		var travel = income*0.25;
+		var bal = income - eat - travel;
+		document.getElementById("eat").value = eat;
+		document.getElementById("travel").value = travel;
+		document.getElementById("man").style.display="block";
+		document.getElementById("woman").style.display="none";
+		return bal;
+
+	}else if (sex==="woman") {
+		var makeup = income*0.2;
+		var shopping = income*0.35;
+		var bal = income - makeup - shopping;
+		document.getElementById("makeup").value = makeup;
+		document.getElementById("shopping").value = shopping;
+		document.getElementById("woman").style.display="block";
+		document.getElementById("man").style.display="none";
+		return bal;
+	}
+}
+function out(){
+	var name = document.getElementById("name").value;
+	var age = document.getElementById("age").value;
+	var income = document.getElementById("income").value;
+	var m = document.getElementById("sex_m");
+	var w = document.getElementById("sex_w");
+	if(m.checked && w.checked===false){
+		var balance = cal("man", parseFloat(income));
+		console.log("man"+balance);
+		show(name, "男", age, balance);
+	}else if (m.checked===false && w.checked){
+		var balance = cal("woman", parseFloat(income));
+		console.log("woman"+balance);
+		show(name, "女", age, balance);
+	}
+}
+function show(name, sex, age, balance){
+	alert(name+"，"+sex+"，"+age+"，"+balance);
+}
+</script>
+</body>
+</html>
