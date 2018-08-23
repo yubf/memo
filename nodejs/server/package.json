@@ -1,0 +1,24 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "my server",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "koa",
+        "async"
+    ],
+    "author": "BinY",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "101.132.153.155"
+    },
+    "dependencies": {
+        "koa": "2.0.0",
+        "koa-router": "7.0.0",
+        "koa-bodyparser": "3.2.0"
+    }
+}

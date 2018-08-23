@@ -4,7 +4,7 @@ root:BinY@585@aliyun
 yubf:alybf1988
 git>>
 yubf:Alybf1988
-https://github.com/yubf/memo.git
+https://github.com/yubf/workspace.git
 
 adduser username
 >password

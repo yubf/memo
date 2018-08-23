@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>time&mouse&img</title>
+<style type="text/css">
+h2 {
+	color: red;
+	text-align: center;
+}
+img {
+	margin: 20px 50px;
+	width: 480px;
+	height: 300px;
+}
+</style>
+</head>
+<body onload="rt(); imgCh();">
+<h2 id="h2"></h2>
+<img src="./jpg/3.jpg" onmouseover="mouseCh()">
+<img id="ic">
+<script type="text/javascript">
+function rt(){
+	var myset = new Date("8/23/2018");
+	var now = Date.now();
+	var t = (myset.getTime()-now)/(1000*60*60*24);
+	var h2 = document.querySelector("h2");
+	// console.log(span);
+	if (t>0){
+		var r = parseInt(t)+1;
+		h2.innerHTML = `还剩最后${r}天`;
+	}else{
+		h2.innerHTML = "已经过期了";
+	}
+}
+function mouseCh(){
+	var img = document.querySelector("img");
+	img.style.cursor = "crosshair";
+	console.log(img);
+}
+</script>
+<script type="text/javascript">
+var imgArr = ["./jpg/1.jpg", "./jpg/2.jpg","./jpg/3.jpg", "./jpg/4.jpg"];
+var imgLen = imgArr.length;
+var i=0;
+function imgCh(){
+	var img = document.getElementById("ic");
+	img.src = imgArr[i];
+	i++;
+	sleep(2000);
+	if(i>=imgLen){
+		i = 0;
+	}
+	setTimeout("imgCh()",3000);
+}
+function sleep(d){
+  for(var t = Date.now();Date.now() - t <= d;);
+}
+</script>
+</body>
+</html>
